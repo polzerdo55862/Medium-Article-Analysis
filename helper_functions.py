@@ -1,13 +1,15 @@
 """
 This module contains some rep
 """
-
+import os
 import sqlite3
 import sys
 import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import data_model
+import mysql.connector
+from mysql.connector import errorcode
 
 ######################################################################################################################
 # Functions to interact with the SQLite database
@@ -70,8 +72,25 @@ class SQLiteConnection:
 # Functions to interact with the MySQL database
 ######################################################################################################################
 
-class SQLiteConnection:
+class MysqlConnection:
 
+    def __init__(self):
+        try:
+            self.cnx = mysql.connector.connect( user='root',
+                                                password=os.environ['MYSQL_PW'],
+                                                host='127.0.0.1',
+                                                database='medium_articles')
+
+        except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+                print("Something is wrong with your user name or password")
+            elif err.errno == errorcode.ER_BAD_DB_ERROR:
+                print("Database does not exist")
+            else:
+                print(err)
+
+        else:
+            self.cnx.close()
 
 
 
