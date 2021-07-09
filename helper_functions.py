@@ -30,11 +30,11 @@ class SQLiteConnection:
         except:
             print("Error:", sys.exc_info()[0])
 
-        # (if not exist) create table stories
-        try:
-            self.cur.execute(data_model.sql_create_table_stories)
-        except:
-            print("Error:", sys.exc_info()[0])
+        # # (if not exist) create table stories
+        # try:
+        #     self.cur.execute(data_model.sql_create_table_stories)
+        # except:
+        #     print("Error:", sys.exc_info()[0])
 
 
 
@@ -64,6 +64,18 @@ class SQLiteConnection:
             print(self.cur.fetchall())
         except:
             print("Error:", sys.exc_info()[0])
+
+
+######################################################################################################################
+# Functions to interact with the MySQL database
+######################################################################################################################
+
+class SQLiteConnection:
+
+
+
+
+
 ######################################################################################################################
 # functions for collection data
 ######################################################################################################################
@@ -167,7 +179,7 @@ class Story:
                    'number_paragraphs', 'paragraphs']
 
         self.stories = pd.DataFrame(stories_data, columns=columns)
-        #self.stories.to_sql("stories", conn, if_exists='append')
+        self.stories.to_sql("stories", conn, if_exists='append')
 
 class StoryContent:
     '''
