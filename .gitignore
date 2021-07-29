@@ -2,6 +2,8 @@
 __pycache__/
 __chrome_driver__
 .idea
+articles/*
+.vscode
 venv
 *.py[cod]
 *$py.class
