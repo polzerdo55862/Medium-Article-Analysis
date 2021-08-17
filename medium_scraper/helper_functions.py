@@ -129,5 +129,5 @@ def save_articles_to_html():
 
 
 if __name__ == '__main__':
-    how_many_users_clapped()
-    # save_articles_to_html()
+    # how_many_users_clapped()
+    save_articles_to_html()
