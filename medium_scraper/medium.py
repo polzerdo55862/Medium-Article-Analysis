@@ -16,6 +16,8 @@ import json
 from datetime import datetime
 import pytz
 from bs4 import BeautifulSoup
+from os import listdir
+from os.path import isfile, join
 
 def get_soup(url):
     r = requests.get(url)
@@ -427,25 +429,43 @@ def save_articles_to_html():
         counter = counter + 1
 
 def extract_image_caption():
-    filename = "668"
-    # Fetch the html file
-    with open(r"articles/" + filename + ".html", encoding="utf8") as fp:
-        contents = fp.read()
-        soup = BeautifulSoup(contents, 'html.parser')
+    # collect all downloaded .html files
+    files_in_articles = listdir(r'./articles')
 
-        for figcaption in soup.find_all('figcaption', {'class': 'km kn ga fy fz ko kp bf b bg bh dx'}):
-            #delete HTML element description
-            figcaption = str(figcaption).replace('<figcaption class="km kn ga fy fz ko kp bf b bg bh dx">', "")
-            figcaption = figcaption.replace('</figcaption>', "")
+    for file in files_in_articles:
+        filename = file.replace(".html","")
 
-            #remove newlines
-            figcaption = figcaption.replace("\n", "")
+        # if entries already exist, delete them and continue
+        article = Articles.objects.get(id=filename)
+        Figcaptions.objects.filter(article=article).delete()
 
-            #remove spaces
-            figcaption_split = figcaption.split()
-            figcaption_new = " ".join(figcaption_split)
+        # Fetch the html file
+        with open(r"articles/" + file, encoding="utf8") as fp:
+            contents = fp.read()
+            soup = BeautifulSoup(contents, 'html.parser')
 
-            print(figcaption_new)
+            for figcaption in soup.find_all('figcaption', {'class': 'km kn ga fy fz ko kp bf b bg bh dx'}):
+                #delete HTML element description
+                figcaption = str(figcaption).replace('<figcaption class="km kn ga fy fz ko kp bf b bg bh dx">', "")
+                figcaption = figcaption.replace('</figcaption>', "")
+
+                #remove newlines
+                figcaption = figcaption.replace("\n", "")
+
+                #remove spaces
+                figcaption_split = figcaption.split()
+                figcaption_new = " ".join(figcaption_split)
+
+                try:
+                    #create new entries for article
+                    figcap = Figcaptions(caption=figcaption_new, article=article)
+                    figcap.save()
+                except Exception as e:
+                    print("---- Entries could not be saved, something went wrong")
+                    print(e)
+
+
+            print(filename)
 
 
 
@@ -458,7 +478,7 @@ if __name__ == '__main__':
     # how_many_users_clapped()
 
     ## Save .html for each article
-    #save_articles_to_html()
+    save_articles_to_html()
 
     # Extract image caption from each article
     extract_image_caption()

@@ -42,7 +42,7 @@ class Archives(models.Model):
     date = models.DateField(null=True)
     last_seen = models.DateTimeField(null=True)
 
-# title = , read_time = , published = , last_seen = , publications = , archive = , user = , claps = , 
+# title = , read_time = , published = , last_seen = , publications = , archive = , user = , claps = ,
 class Articles(models.Model):
     title = models.CharField(max_length=500)
     url = models.CharField(max_length=200)
@@ -56,5 +56,8 @@ class Articles(models.Model):
     voter_count = models.IntegerField(null=True)
     voter_scraped_date = models.DateTimeField(null=True)
     response_count = models.IntegerField(null=True)
-   
 
+# contains all image captions for each image of the article
+class Figcaptions(models.Model):
+    caption = models.CharField(max_length=1000)
+    article = models.ForeignKey(to=Articles, on_delete=models.CASCADE)
