@@ -481,4 +481,4 @@ if __name__ == '__main__':
     save_articles_to_html()
 
     # Extract image caption from each article
-    extract_image_caption()
+    #extract_image_caption()

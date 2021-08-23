@@ -19,13 +19,14 @@ python3 manage.py migrate
 
 5. Restore Database backup in your postgres database
 ```bash
+pg_restore -U postgres -C -d medium backup_file.tar
+```
+
+For creating a backup use:
+```bash
 pg_dump -U postgres -W -F t medium > database_backup\backup_file.tar
 ```
 
-
-```bash
-pg_restore -U postgres -C -d medium backup_file.tar
-```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
