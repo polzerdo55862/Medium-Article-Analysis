@@ -61,3 +61,9 @@ class Articles(models.Model):
 class Figcaptions(models.Model):
     caption = models.CharField(max_length=1000)
     article = models.ForeignKey(to=Articles, on_delete=models.CASCADE)
+
+    # defines if the label for self_made was set manually or automatically
+    self_made_manual_label = models.BooleanField(default=False)
+    self_made_automated_label = models.BooleanField(default=False)
+    self_made_timestamp = models.DateTimeField(null=True)
+    self_made = models.BooleanField(default=False)

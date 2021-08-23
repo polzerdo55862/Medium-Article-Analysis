@@ -300,6 +300,7 @@ def save_articles_to_html():
         article_url = article["url"]
         article_id = article["id"]
 
+        file_ids = [f.replace(".html", "") for f in onlyfiles]
         if str(article_id) in file_ids:
             print("--- Article " + str(article_id) + " was already saved")
         else:
@@ -431,42 +432,67 @@ def save_articles_to_html():
 def extract_image_caption():
     # collect all downloaded .html files
     files_in_articles = listdir(r'./articles')
+    file_ids = [f.replace(".html", "") for f in files_in_articles]
 
-    for file in files_in_articles:
-        filename = file.replace(".html","")
+    for article in Articles.objects.values():
+        article_url = article["url"]
+        article_id = article["id"]
 
-        # if entries already exist, delete them and continue
-        article = Articles.objects.get(id=filename)
-        Figcaptions.objects.filter(article=article).delete()
+        #get all already articles with entries in table figcaptions
+        figcaptions = Figcaptions.objects.values()
+        figcaptions_articles_ids = [f["article_id"] for f in figcaptions]
 
-        # Fetch the html file
-        with open(r"articles/" + file, encoding="utf8") as fp:
-            contents = fp.read()
-            soup = BeautifulSoup(contents, 'html.parser')
+        # only start searching for figcaptions if there are no entries in figcaptions table to the article specified
+        if article_id not in figcaptions_articles_ids:
+            #filename = file.replace(".html","")
+            filename = article_id
+            file = str(article_id) + ".html"
 
-            for figcaption in soup.find_all('figcaption', {'class': 'km kn ga fy fz ko kp bf b bg bh dx'}):
-                #delete HTML element description
-                figcaption = str(figcaption).replace('<figcaption class="km kn ga fy fz ko kp bf b bg bh dx">', "")
-                figcaption = figcaption.replace('</figcaption>', "")
+            # if entries already exist, delete them and continue
+            # article = Articles.objects.get(id=filename)
+            # Figcaptions.objects.filter(article=article).delete()
 
-                #remove newlines
-                figcaption = figcaption.replace("\n", "")
+            # Fetch the html file
+            with open(r"articles/" + file, encoding="utf8") as fp:
+                contents = fp.read()
+                soup = BeautifulSoup(contents, 'html.parser')
 
-                #remove spaces
-                figcaption_split = figcaption.split()
-                figcaption_new = " ".join(figcaption_split)
+                for figcaption in soup.find_all('figcaption', {'class': 'km kn ga fy fz ko kp bf b bg bh dx'}):
+                    #delete HTML element description
+                    figcaption = str(figcaption).replace('<figcaption class="km kn ga fy fz ko kp bf b bg bh dx">', "")
+                    figcaption = figcaption.replace('</figcaption>', "")
 
-                try:
-                    #create new entries for article
-                    figcap = Figcaptions(caption=figcaption_new, article=article)
-                    figcap.save()
-                except Exception as e:
-                    print("---- Entries could not be saved, something went wrong")
-                    print(e)
+                    #remove newlines
+                    figcaption = figcaption.replace("\n", "")
+
+                    #remove spaces
+                    figcaption_split = figcaption.split()
+                    figcaption_new = " ".join(figcaption_split)
+
+                    try:
+                        #create new entries for article
+                        figcap = Figcaptions(caption=figcaption_new, article=article)
+                        figcap.save()
+                    except Exception as e:
+                        print("---- Entries could not be saved, something went wrong")
+                        print(e)
 
 
-            print(filename)
+                print(filename)
 
+        else:
+            print("---- figcaptions to article " + str(article_id) + " already saved")
+
+def manually_label_figcaptions():
+    '''
+    - Picks entries in the figcaptions table and asks the user if its a self made image or not
+    - Sets the field self_made_manual_label to True
+    - Set the field self_made_timestamp to current time
+    - Set field self_made = True, if user thinks its a image made by the author
+    '''
+
+    figcaptions = Figcaptions.objects.values()
+    figcaptions_articles_ids = [f["article_id"] for f in figcaptions]
 
 
 if __name__ == '__main__':
@@ -478,7 +504,9 @@ if __name__ == '__main__':
     # how_many_users_clapped()
 
     ## Save .html for each article
-    save_articles_to_html()
+    #save_articles_to_html()
 
     # Extract image caption from each article
     #extract_image_caption()
+
+    # Manually label some captions to create a train data set
