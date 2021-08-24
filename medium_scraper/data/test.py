@@ -1,7 +1,7 @@
 import re
 import sys
 import requests
-sys.path.append('.')
+sys.path.append('..')
 from medium_scraper import __init__
 from datetime import date, datetime, timedelta, timezone, tzinfo
 from scraper.models import * 
