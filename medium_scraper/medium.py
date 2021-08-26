@@ -457,9 +457,9 @@ def extract_image_caption():
                 contents = fp.read()
                 soup = BeautifulSoup(contents, 'html.parser')
 
-                for figcaption in soup.find_all('figcaption', {'class': 'km kn ga fy fz ko kp bf b bg bh dx'}):
+                for figcaption in soup.find_all('figcaption'):
                     #delete HTML element description
-                    figcaption = str(figcaption).replace('<figcaption class="km kn ga fy fz ko kp bf b bg bh dx">', "")
+                    figcaption = str(figcaption).replace('<figcaption class="jo jp ga fy fz jq jr bf b bg bh dx">', "")
                     figcaption = figcaption.replace('</figcaption>', "")
 
                     #remove newlines
@@ -471,8 +471,9 @@ def extract_image_caption():
 
                     try:
                         #create new entries for article
-                        figcap = Figcaptions(caption=figcaption_new, article=article)
+                        figcap = Figcaptions(caption=figcaption_new, article=Articles.objects.get(id=filename))
                         figcap.save()
+                        print("************* caption saved")
                     except Exception as e:
                         print("---- Entries could not be saved, something went wrong")
                         print(e)
@@ -524,39 +525,39 @@ def manually_label_figcaptions():
             print("Self-made?: " + str(caption.self_made_manual_label))
             print(caption.self_made_timestamp)
 
-def rule_based_labeling():
-    '''
-    Based on substrings, the function finds images which are most likely made by the author of was copied from another source
-    '''
-    figcaptions = Figcaptions.objects.filter(self_made_timestamp__isnull = True)
-
-    for caption in figcaptions:
-        print(caption.caption)
-        def self_made():
-            #set self_made_manual_label to True
-            caption.self_made_manual_label = True
-
-            # set timestamp
-            caption.self_made_timestamp = datetime.now(tz=pytz.UTC)
-            caption.save()
-
-            print("Image made by author: ")
-            print(caption.caption)
-        def not_self_made():
-            #set self_made_manual_label to True
-            caption.self_made_manual_label = False
-
-            # set timestamp
-            caption.self_made_timestamp = datetime.now(tz=pytz.UTC)
-            caption.save()
-
-            print("Image NOT made by author: ")
-            print(caption.caption)
-
-        if "Image by author" in caption.caption:
-            self_made()
-        if "Unsplash" in caption.caption:
-            not_self_made()
+# def rule_based_labeling():
+#     '''
+#     Based on substrings, the function finds images which are most likely made by the author of was copied from another source
+#     '''
+#     figcaptions = Figcaptions.objects.filter(self_made_timestamp__isnull = True)
+#
+#     for caption in figcaptions:
+#         print(caption.caption)
+#         def self_made():
+#             #set self_made_manual_label to True
+#             caption.self_made_manual_label = True
+#
+#             # set timestamp
+#             caption.self_made_timestamp = datetime.now(tz=pytz.UTC)
+#             caption.save()
+#
+#             print("Image made by author: ")
+#             print(caption.caption)
+#         def not_self_made():
+#             #set self_made_manual_label to True
+#             caption.self_made_manual_label = False
+#
+#             # set timestamp
+#             caption.self_made_timestamp = datetime.now(tz=pytz.UTC)
+#             caption.save()
+#
+#             print("Image NOT made by author: ")
+#             print(caption.caption)
+#
+#         if "Image by author" in caption.caption:
+#             self_made()
+#         if "Unsplash" in caption.caption:
+#             not_self_made()
 
 if __name__ == '__main__':
     ## Initial collecting of user info from users that didn't got updated yet

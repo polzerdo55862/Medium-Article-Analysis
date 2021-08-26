@@ -64,6 +64,7 @@ class Figcaptions(models.Model):
 
     # defines if the label for self_made was set manually or automatically
     self_made_manual_label = models.BooleanField(default=False)
-    self_made_automated_label = models.BooleanField(default=False)
+    #self_made_automated_label = models.BooleanField(default=False)
     self_made_timestamp = models.DateTimeField(null=True)
-    self_made = models.BooleanField(default=False)
+    #self_made = models.BooleanField(default=False)
+

@@ -1084,7 +1084,7 @@ group by count_bin]]></_.fcp.ObjectModelEncapsulateLegacy.true...relation>
       <column aggregation='Sum' datatype='integer' name='[count]' role='dimension' type='ordinal' />
       <column datatype='string' name='[count_bin]' role='dimension' type='nominal' />
       <column-instance column='[count_bin]' derivation='None' name='[none:count_bin:nk]' pivot='key' type='nominal' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.542722' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.457278' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.542406' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.457594' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:count_bin:nk]' type='palette'>
@@ -1744,9 +1744,7 @@ group by count_bin]]></relation>
               <calculation class='bin' decimals='0' formula='[count]' peg='0' size='3' />
             </column>
             <column aggregation='Sum' datatype='integer' name='[count]' role='dimension' type='ordinal' />
-            <column datatype='string' name='[count_bin]' role='dimension' type='nominal' />
             <column-instance column='[count (bin)]' derivation='None' name='[none:count (bin):ok]' pivot='key' type='ordinal' />
-            <column-instance column='[count_bin]' derivation='None' name='[none:count_bin:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -1765,7 +1763,7 @@ group by count_bin]]></relation>
             </style>
           </pane>
         </panes>
-        <rows>[federated.055danf0kdin7r11t1l251t3s76p].[none:count_bin:nk]</rows>
+        <rows />
         <cols>[federated.055danf0kdin7r11t1l251t3s76p].[none:count (bin):ok]</cols>
       </table>
       <simple-id uuid='{587D2667-6A77-4959-91CB-12625C70D312}' />
@@ -1805,8 +1803,6 @@ group by count_bin]]></relation>
               <style-rule element='mark'>
                 <format attr='mark-color' value='#edc948' />
                 <format attr='size' value='1.5272375345230103' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
               </style-rule>
             </style>
           </pane>
@@ -1816,25 +1812,6 @@ group by count_bin]]></relation>
         <show-full-range>
           <column>[federated.055danf0kdin7r11t1l251t3s76p].[count (bin)]</column>
         </show-full-range>
-        <mark-labels>
-          <mark-label id='3'>
-            <tuple-reference>
-              <tuple-descriptor>
-                <pane-descriptor>
-                  <x-fields />
-                  <y-fields />
-                </pane-descriptor>
-                <columns>
-                  <field>[federated.055danf0kdin7r11t1l251t3s76p].[none:count_bin:nk]</field>
-                </columns>
-              </tuple-descriptor>
-              <tuple>
-                <value>&quot;0 - 3&quot;</value>
-              </tuple>
-            </tuple-reference>
-            <label-position x='11' y='21' />
-          </mark-label>
-        </mark-labels>
       </table>
       <simple-id uuid='{299F1E82-C963-4B2E-8509-AF106D54FE2A}' />
     </worksheet>
@@ -2117,8 +2094,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='78' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='77' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='74' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='73' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='97538' id='1' is-fixed='true' name='Average Claps per TDS Article' w='98400' x='800' y='1231'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2166,8 +2143,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='72' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='71' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='68' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='67' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='97538' id='3' is-fixed='true' name='Sum of Articles published in TDS each Year' w='98400' x='800' y='1231'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2219,8 +2196,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='78' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='77' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='74' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='73' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='97538' id='19' is-fixed='true' name='Average Number of Claps per Voter' w='98400' x='800' y='1231'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2268,8 +2245,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='46' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='45' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='42' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='41' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Clap count in relation to reading time' w='98400' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2321,8 +2298,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='49' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='48' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='45' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='44' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='97538' id='3' is-fixed='true' name='Claps / Voters Ratio' w='98400' x='800' y='1231'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2375,8 +2352,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='44' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='43' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='40' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='39' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='97538' id='3' is-fixed='true' name='Clap count in relation to reading time by year' w='98400' x='800' y='1231'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2437,8 +2414,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='32' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='29' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='28' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='96000' id='3' is-fixed='true' name='Voter Count for Articles where Claps / Voters Ratio = 50' w='98400' x='800' y='2000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2491,8 +2468,8 @@ group by count_bin]]></relation>
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='22' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='21' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='18' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='17' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='How many figure per article?' w='98400' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2525,7 +2502,7 @@ group by count_bin]]></relation>
       <simple-id uuid='{99109C63-31BF-41C4-AE64-743EE2955721}' />
     </dashboard>
   </dashboards>
-  <windows saved-dpi-scale-factor='1.25' source-height='93'>
+  <windows source-height='93'>
     <window class='worksheet' name='Sum of Articles published in TDS each Year'>
       <cards>
         <edge name='left'>
@@ -2723,7 +2700,7 @@ group by count_bin]]></relation>
       </cards>
       <simple-id uuid='{0519B8BF-4B48-4CF2-9FF3-C8407341D416}' />
     </window>
-    <window class='worksheet' maximized='true' name='How many figure per article?'>
+    <window class='worksheet' name='How many figure per article?'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2749,20 +2726,12 @@ group by count_bin]]></relation>
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.055danf0kdin7r11t1l251t3s76p].[none:count (bin):ok]</field>
-            <field>[federated.055danf0kdin7r11t1l251t3s76p].[none:count_bin:nk]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
       <simple-id uuid='{3591D601-DD01-4369-950D-7689F3434EBB}' />
     </window>
-    <window class='worksheet' name='From what source?'>
+    <window class='worksheet' maximized='true' name='From what source?'>
       <cards>
         <edge name='left'>
-          <strip size='273'>
+          <strip size='274'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -2780,13 +2749,6 @@ group by count_bin]]></relation>
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <highlight>
-          <color-one-way>
-            <field>[federated.055danf0kdin7r11t1l251t3s76p].[none:count_bin:nk]</field>
-          </color-one-way>
-        </highlight>
-      </viewpoint>
       <simple-id uuid='{12434F4B-781A-40FF-8392-03D0D82FDB82}' />
     </window>
     <window class='dashboard' name='1'>
@@ -2862,174 +2824,4 @@ group by count_bin]]></relation>
       <simple-id uuid='{0306A1AA-A106-442D-BA79-89FBED7DA352}' />
     </window>
   </windows>
-  <thumbnails>
-    <thumbnail height='192' name='From what source?' width='192'>
-      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
-    </thumbnail>
-    <thumbnail height='164' name='How many figure per article?' width='164'>
-      iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAYAAAAZtYVBAAAACXBIWXMAABJ0AAASdAHeZh94
-      AAAQKklEQVR4nO2deXAUV37Hvz3dPT0zGl3oRgIJCZAAYRDnrjHC2Bt8yOCAN0kRJ3FqvRVX
-      pcreVGJ2KWcrlbJry3bWxmad4AWDWQxOnMRZryUD4vRaYG0wBMwRLSBxI4FupBlprp7u/CG0
-      wV4wkqbnvdej3+cfqqiZ9/up9NF73e/4Pck0TRMEIQgO3gkQxK2QkIRQkJCEUJCQhFCQkIRQ
-      kJCEUJCQhFCQkIRQkJCEUJCQhFCQkIRQkJCEUJCQhFCQkIRQkJCEUJCQhFCQkIRQkJCEUJCQ
-      hFCQkIRQkJCEUJCQhFCQkIRQkJCEUJCQhFCQkHHC1HUYfj/0qME7FVuh8E7Adpgm9PYO6Nda
-      EGluQeTaNegtLYj6fDADQRjBAMxAEKauAwCeLV4GRXbAralwawrcmooUjxP5WSnIz0xGQVYK
-      CrJSkJXmgSRJnH84/pCQd8EIBBE6cxqhUw0INjQgcuUKzEhkWG3oUQO+/hB8/aHf/d/J821f
-      +YxTkTE+JxXTi7MxvSQHUwuz4NZG369HomJTX8M0EWpsRODoMYQaGhBqOgcYIx92ny1eNqLv
-      ORwSJhdkYHpxNuaUjUXpuEyMhg6UhLyJ3taOvgMH0Fd3AHprq2XtjlTIr5OX4cXiigm4v6II
-      OelJlrQpIqNaSDMcRt/n9eirq0Pot6fjEsMqIW9l2oQsLK6YgEUzCuFUZcvb58moFNIIBOHf
-      swe+7TsQ7emJa6x4CDlImteFx+8rxSPzJyXM8+aoEtLw+eHbtQu+nbUw+vqYxIynkIN43U48
-      du9kLL13MrxuZ9zjxZNRIaQZiaC3uga91TUwQ6G7f8FCWAg5iMupYEXlFCyvLINTsedQnvBC
-      Bo+fQNe7my19URkOLIUcJC/Di2eWzUHFpFzmsWMlYYWMdnWhe8tW9B86xDUPHkIOsmD6ODz9
-      aAUyUj3cchguiSekacK/bz+6t25jPjzfDp5CAgPD+PcercCSuSW2mMdMjFezmxiBALo2bET/
-      b37DOxVhCIZ1rPvVYZw834q/Xj4XHk3lndI3kjBChi9eRMeba6Ff5/OsKDoHTlxGU3MXfrhy
-      AYrHpvNO547Yf8g2Tfj37kP3lvd+t6FBJHgP2V9HVRx4umoWHp43Ucgh3N49pGmie8tW+Gpr
-      eWdiGyK6gZ9/fATN7b14uqpCuB1GthXS1HV0rnsb/fX0vDgSaurPoqcvhB98dz4UWZxtsbYU
-      0ggE0bFmDYInT/FOxdbUHb+E3r4QVj95nzBLj+L8aQwRo7cXbS+9RDJaxJdN1/HjjfvR08d/
-      igywmZBGIIi2V15F+PwF3qkkFE3NXXjxF58hEOL/UmgbIU1dR8eaNSRjnGhq7sIr7x/kfgbI
-      HkKaJjrXvU3DdJz5suk61n54CDxnAsUX8ubUDr1Ns6Hu+CVs2n4MvJwUXkj/3n00z8iYmvqz
-      qP2iiUtsoYUMX7yI7i3v8U5jVLJp+1FcuNbNPK6wQhqBADreXCvkcuBoIKIb+Kd/rUd/aHhH
-      fmNFTCFNE10bNtJGCc60dPqw7qPDTJ8nhRTSv28/bSEThAMnLmP34XPM4gknZLSrC91bt/FO
-      g7iFd3ccQ2dPP5NYwgnZvWWrEDu9if8nGNaxaccxJrGEEjJ4/AT3MzDE7fn85BUca7we9zjC
-      CGlGIujavJl3GsQ3sL76CMJ6NK4xhBGyt7qG3qoF51qnHx/VxafkzCBCCGn4/OitruGdBjEE
-      fln3W/gD4bi1L4SQvl276EXGJgTDOj6pPxu39rkLaQSC8O2ktWo7UVN/Nm57J7kL6d+zh1nh
-      J8Ia/IFw3DZfcBXSDIfh276DZwrECPnVgdMIR6x/4+YqZN/n9XGvz0jEhxv+IOpOXLK8Xb5C
-      1tXxDE/EyKdHL1reJjch9bb2uJVRJthw6kIb2rqtff7nJmTfwYO8QhMW8usvL1raHh8hTZOG
-      6wTh06MXLd0vyUXIUGMjLRMmCC2dPpy50mFZe1yEDBxls5WJYMORMy2WtcWnh2xo4BGWiBMn
-      z7Xd/UNDhLmQRiA4cF0bkTA0Xu1EMGzNUiJzIUNnTsd0dyAhHlHDRMPFdkvaYi/kKRquE5ET
-      56x5SWUuZJCeHxOSr1+3PFLYCmmaiFy5wjQkwYbLbT2WFKliKqTe0THsy88JexCORNFuwVFZ
-      tkK2WDdfRYhHc3tvzG0wFTLSTEImMlfbfTG3wVbIa9dYhiMYY7sekobsxOaq3YSM+mLv0glx
-      6e2P/XgsUyHNQJBlOIIxQQtqSTIV0ggGWIYjGBOwYD2bekjCMgJ26iFNXafyzAlORDcQjfGe
-      G3ZCBql3HA3EOmwzu3FRUsS43DHeODxuJFWkQ47uhWTq2Ob4X1zNehivNd2DjqDMO724E+vN
-      ssx6SMnpZBWKD5IET0URUirOQdFrIZk3ewojioLW7Xgzcx2eK7sMReJ3SxYLNDW2Pzp2LzUO
-      ByQ5MXsIZ3E+Uu8LQXNWQ9LvcOAp1IN5ne9h48R/Q1XhDbYJMkKRHTFfCM/0LVvyeFiGizvK
-      mHSkVKYiKXMnHOGhFT1QbpzHyv5/xrpp+zE1PbFKECa51JjbYPpgJ6enwUiA1RpJ0+CpyIKK
-      fZBCIWAEnUJKWz1e0A7jQvmjeL1xKm6E7D96pCe7Y26DaQ8pp6ezDBcX3NOLkDr3KpzmDkhm
-      jD1cNIIJrR/jrdwNeKa0GRLs/Xw5JsVuQqalsQxnKeq4PKRWSnB5qiFFrN21JPV3YmHXZmye
-      /J/4gwL7jiBjLOghmQ7ZSlYWy3CWIKemIGm6E3JkNxCKbw+mdJ/FUziLZeWVWHv1W2i6Ya+Z
-      iez0pJjbYCqkWlDAMlxMSIoCz6yxcMqfAhG2FX7TW+vwj+5DOJO/FG+cnQx/hHuh4yExLjsl
-      5jaY/qR2EdI1tRBp32qHU/oEMDiVm9ZDKG37EOvyN+EvJ1+HZIP5y/E5qTG3wVRIJS9X6LlI
-      NS8bqQs1uJNrgIgYpyMdfa34TvdGbCz9GAvz/LzTuSOK7EBeRnLM7bCdh5RlqOPHsww5JBxJ
-      SfDelwvv+P1whA/zTue2aJ2n8Iy+Fm9M/2+M84q3SaUwNw2yI7ZJcYBDoQCttJR1yDvjcMAz
-      uwip9zRAjewGIHqJFxNZ1/filZSfYfW0JrgUcfKdVmTNCyt7IcvEEFKbNA5pC/zQlGrAsFfh
-      fTPSj/K2D/DOuF9g5cR2IZ4vp5KQI0PJykBqpRee9O2QwvG5a4UVkr8FVT3rsaFsB+bl8N2N
-      P7Uw05J2mAspp6VxeduWXBq8386Ht/ggHKH6ES33iYq74xieM9/AT6cfQa6HfWWQotw0pHpd
-      lrTFZYLLPWc223gzi5A6+wJUYyckJGgpF9NA3vVavJa+Dn879SJUmd0wPn9qvmVtcRHSM2cO
-      kzjOorFIq9Th0r5hW1iiEfZhVvs2bJywDcuLupiEnDfF5kI6S4rjutFCTk9F8sJ0JGXXQgqN
-      zvJ/cs8lPNG3Duun7saMzPgdHxmT4kbJ2DGWtcdnTUqSkLTgXuubVVV4549HStkRKOHPEuo5
-      caQktX+BVfIbeLn8ODJc1t9NuGhGIWLck/sVuC2SJt2/yNL23OVFSJl/HSo+AQw6//0VjCjG
-      tdZgbdbbeLbsMmSHdc+XD84utqwtgKOQakEBnCUlFrSTg9RKGa6kajgizRZklsAEb2B+53vY
-      VPwBqsbHPvc6qSDDkg0Vt8J1G4n3gcUj/q4j2YvkBdnwjt0LR4juvRkOSs85rAy8hX+Z9imm
-      jBn5JuOH5lrbOwKAZFpRh3eEmJEIWp77G0S7u4f+JVmGp6IAmlpnuxUWIZGdOJ9ZhTWNZcM6
-      RpGR6sH6v3sMqmJtn8a1h5RUFSmPLxvy512l45H27R5ocg3JaBXRMIpbP8Jbue/gr0pbhnyM
-      4ruLplguI8C5hwRu9pLP/gDRG3c+GqrmZMIzuQ+O8CGGmY1OIull2Nr3EPY333krWXqyGxtW
-      PQanYv1WQu5bkSVVRcof3r6XdHjcSL53LJKKPiMZGaF2n8b3wmvxs/LPUZx6+1WtJxZNiYuM
-      gAA9JACY4fDAs+RgLylJ8MwshOY+CETZrDYQv4+kuHB6zGNfOUaR5nXhnVVL4YyxQsWd4N5D
-      AgNlVlKWLQUAOEsKkHpfAJqzmmTkjKkHUdr2Id7OfxdPTWyFJJlYUTklbjICgvSQwEAv2fv+
-      P8DR/QmtsAhKX8EDSHt8DVzO+J0NFKKHBAZ6yaTFVSSjwGTO/aO4yggIJCQAKEULoU5bzjsN
-      4jao05ZDKVoY9zhCCQkA2qIfQvLm8E6DuAXJmwNt0Y+YxBJOSElLhmvJi7zTIG7BteRFSJqX
-      SSzhhAQApXAB1PIVvNMgAKjlT0ApXMAsnpBCAoBWSUM3b6TkXGiLVjGNKayQkuaFu+p1QLZX
-      waWEQdHgrnodkpPNUD2IsEICgDx2JtyPvAKaC2KNBPcjr0LOm8E8stBCAoAyaQm0yud5pzGq
-      0BatgjLxO1xiCy8kADhn/wWcM/+UdxqjAufMJ+Gc9efc4ttCSECCdv9qKCUj32FO3B2l5AFo
-      9/8IPB+RbCIkAMkB16M/hZw7nXcmCYmcUw7XI68CEl8l7CMkBrZDuZf/HHL+LN6pJBRy/my4
-      V6yHpMZeIzxWhNntMyz0EAK1q6E37uGdie1RJi2B++GXAUXjnQoAuwoJAKaB0GevInzsfd6Z
-      2BZnxZMDa9Sch+lbsa+QAAAT4f/ZglDda7wTsR1a5fNwzn4Kos3x2lzIAfQzOxHY9QIQTdDK
-      ZlbiUOB66CdQy6p4Z3JbEkJIAIi2fIlg7WoYPVd5pyIsjtQCuB5+GfLYCt6p3JGEERIYKHUc
-      OvA6Isf/nXcqwqHe88fQKp+HpIp9AWpCCTmIfqkewd0/hulv450KdyRvNlxLXmK6hSwWElJI
-      ADBDPoR+/TIiDdW8U+GGOmUptMUvQNJivz+GFQkr5CD6uX0I7v/JqOotJW82XIv/HsrEB3mn
-      MmwSXkhg4Hxx5OhWhA9vghkW9zasWJGcXjjnfR9qxZ9BUqwpQs+aUSHkIGagG+Ev3kHkxH/A
-      1ONX5pg1kuqGes+fwDnv+5Bc9r0CGhhlQg5iBm8gcvwDhI+9DzMwjFKAgiG50+GseBLqjJWQ
-      XLFffCkCo1LIQUw9CP30DkRO/Rei147zTmfIyHkzoJavgFJWZduh+U6MaiFvxehsQuTULxE5
-      WyvkC5CUnAt18kNQp62AIyP2UtiiQkL+HiairQ3Qz+2D3rQfRie/6+ccmZOglDwIZeIDkLOn
-      QLR153hAQt4Fs78T0eajiLYcHfi3oxGIhq0PJDshZ06EnD8bcv4cyPmzILnjd5ePqJCQw8WI
-      wui5AqPjLKIdTTB912D2tcPwt8L0tw9MKxm3uc/aoUByeiF5s+BIyobkzYaUnAc5cyIcGZPg
-      SBsPOMS93J4VJGQ8MA2YegjQg4DigqRoQu05FBkSkhAK+rMlhIKEJISChCSEgoQkhIKEJISC
-      hCSEgoQkhIKEJISChCSEgoQkhIKEJISChCSEgoQkhIKEJITi/wALWH5RBTqt3wAAAABJRU5E
-      rkJggg==
-    </thumbnail>
-  </thumbnails>
 </workbook>
