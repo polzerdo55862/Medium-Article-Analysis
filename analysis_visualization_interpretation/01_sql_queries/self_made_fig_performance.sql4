@@ -1,0 +1,5 @@
+SELECT p.id, count(p.clap_count), p.clap_count
+FROM 
+	public.scraper_articles p
+left join public.scraper_figcaptions o on o.article_id = p.id
+group by p.id

@@ -1,4 +1,5 @@
-select count(*), count_bin from
+SELECT * FROM public.scraper_articles
+left join on scraper_articles
 (
 Select *,
        CASE 
@@ -12,5 +13,4 @@ from
 SELECT article_id, count(*) FROM public.scraper_figcaptions
 group by article_id
 ) as X
-) as Y
-group by count_bin
+) as y
