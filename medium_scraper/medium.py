@@ -460,6 +460,7 @@ def extract_image_caption():
                 for figcaption in soup.find_all('figcaption'):
                     #delete HTML element description
                     figcaption = str(figcaption).replace('<figcaption class="jo jp ga fy fz jq jr bf b bg bh dx">', "")
+                    figcaption = str(figcaption).replace('<figcaption class="no np ga fy fz nq nr bf b bg bh dx">', "")
                     figcaption = figcaption.replace('</figcaption>', "")
 
                     #remove newlines
@@ -568,10 +569,10 @@ if __name__ == '__main__':
     #how_many_users_clapped()
 
     ## Save .html for each article
-    save_articles_to_html()
+    #save_articles_to_html()
 
     # Extract image caption from each article
-    #extract_image_caption()
+    extract_image_caption()
 
     # Manually label some captions to create a train data set
     # manually_label_figcaptions()

@@ -30,5 +30,14 @@ pg_dump -U postgres -W -F t medium > database_backup\backup_file.tar
 ```
 
 
+## Used Libraries and Tools
+
+* Python: SQLAlchemy, Requests, BeautifulSoup
+* SQL: Postgres
+* Visualization: Tableau
+
+## Analysis
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
