@@ -38,9 +38,6 @@ pg_dump -U postgres -W -F t medium > database_backup\backup_file.tar
 
 ## Analysis
 
-**What makes an Article popular on Towards Data Science? An Analysis of 44k+ TDS Articles**
-
-
 <img src="./img/summary_all_2.png" width="800" title="Summary TDS Articles analysis">
 
 ## License
