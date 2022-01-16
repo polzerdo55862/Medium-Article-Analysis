@@ -15,7 +15,7 @@ pip install -r requirements.txt
 5. Change Database Settings in medium_scraper/settings.py
 
 5. Migrate to apply Django data model to database "medium"
-````bash
+```bash
 python3 manage.py migrate
 ```
 
