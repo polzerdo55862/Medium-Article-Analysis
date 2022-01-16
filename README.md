@@ -2,8 +2,6 @@
 
 Includes some functions for collecting various data from the online publishing platform Medium (medium.com). I push the results into a Postgres database and use it for various analyses in Tableau.
 
-
-
 1. Create Virtualenv
 ```bash
 python3 -m venv /path/to/new/virtual/environment
@@ -13,7 +11,8 @@ python3 -m venv /path/to/new/virtual/environment
 pip install -r requirements.txt
 ```
 3. Create database "medium" on your Postgres Server
-4. Change Database Settings in medium_scraper/settings.py
+
+5. Change Database Settings in medium_scraper/settings.py
 
 5. Migrate to apply Django data model to database "medium"
 ````bash
